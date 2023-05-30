@@ -1,13 +1,13 @@
 "use client";
 import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
-import { GithubIcon } from '@mantine/ds';
 import { IconBrandSpotify } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    position: 'relative',
-    boxSizing: 'border-box',
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
   },
 
   inner: {
@@ -75,15 +75,14 @@ export function HeroTitle() {
       <Container size={700} className={classes.inner}>
         <h1 className={classes.title}>
           Create {' '}
-          <Text component="span" variant="gradient" gradient={{ from: 'darkgreen', to: 'green' }} inherit>
+          <Text component="span" variant="gradient" gradient={{ from: 'lightgreen', to: 'darkgreen' }} inherit>
             AI-curated
           </Text>{' '}
-          Spotify playlists in seconds.
+          Spotify playlists effortlessly.
         </h1>
 
         <Text className={classes.description} color="dimmed">
-          Build fully functional accessible web applications with ease – Mantine includes more than
-          100 customizable components and hooks to cover you in any situation
+          Simply enter a prompt and let the AI do the heavy lifting. Say good-bye to spending hours curating playlists.
         </Text>
 
         <Group className={classes.controls}>

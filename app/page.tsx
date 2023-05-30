@@ -1,6 +1,9 @@
 import { HeroTitle } from '../components/Hero/Hero';
+
 export default function Page() {
   return (
-    <HeroTitle />
+    <div>
+      <HeroTitle />
+    </div>
   );
 }
