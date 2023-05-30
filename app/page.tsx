@@ -1,5 +1,6 @@
-import { Test } from './test-component';
-
+import { Hero } from '../components/Hero/Hero';
 export default function Page() {
-  return <Test />;
+  return (
+    <Hero />
+  );
 }
