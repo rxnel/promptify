@@ -1,6 +1,6 @@
-import { Hero } from '../components/Hero/Hero';
+import { HeroTitle } from '../components/Hero/Hero';
 export default function Page() {
   return (
-    <Hero />
+    <HeroTitle />
   );
 }

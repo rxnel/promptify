@@ -1,87 +1,114 @@
 "use client";
-import { createStyles, Overlay, Container, Title, Button, Text} from '@mantine/core';
-import { rem } from '@mantine/styles'
+import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
+import { GithubIcon } from '@mantine/ds';
+import { IconBrandSpotify } from '@tabler/icons';
+
 const useStyles = createStyles((theme) => ({
-  hero: {
+  wrapper: {
     position: 'relative',
-    backgroundImage:
-      'url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    boxSizing: 'border-box',
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
   },
 
-  container: {
-    height: rem(700),
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start',
-    paddingBottom: `calc(${theme.spacing.xl} * 6)`,
-    zIndex: 1,
+  inner: {
     position: 'relative',
+    paddingTop: rem(200),
+    paddingBottom: rem(120),
 
     [theme.fn.smallerThan('sm')]: {
-      height: rem(500),
-      paddingBottom: `calc(${theme.spacing.xl} * 3)`,
+      paddingBottom: rem(80),
+      paddingTop: rem(80),
     },
   },
 
   title: {
-    color: theme.white,
-    fontSize: rem(60),
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: rem(62),
     fontWeight: 900,
     lineHeight: 1.1,
+    margin: 0,
+    padding: 0,
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 
     [theme.fn.smallerThan('sm')]: {
-      fontSize: rem(40),
+      fontSize: rem(42),
       lineHeight: 1.2,
-    },
-
-    [theme.fn.smallerThan('xs')]: {
-      fontSize: rem(28),
-      lineHeight: 1.3,
     },
   },
 
   description: {
-    color: theme.white,
-    maxWidth: 600,
+    marginTop: theme.spacing.xl,
+    fontSize: rem(24),
 
     [theme.fn.smallerThan('sm')]: {
-      maxWidth: '100%',
-      fontSize: theme.fontSizes.sm,
+      fontSize: rem(18),
+    },
+  },
+
+  controls: {
+    marginTop: `calc(${theme.spacing.xl} * 2)`,
+
+    [theme.fn.smallerThan('sm')]: {
+      marginTop: theme.spacing.xl,
     },
   },
 
   control: {
-    marginTop: `calc(${theme.spacing.xl} * 1.5)`,
+    height: rem(54),
+    paddingLeft: rem(38),
+    paddingRight: rem(38),
 
     [theme.fn.smallerThan('sm')]: {
-      width: '100%',
+      height: rem(54),
+      paddingLeft: rem(18),
+      paddingRight: rem(18),
+      flex: 1,
     },
   },
 }));
 
-export function Hero() {
+export function HeroTitle() {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.hero}>
-      <Overlay
-        gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%)"
-        opacity={1}
-        zIndex={0}
-      />
-      <Container className={classes.container}>
-        <Title className={classes.title}>A fully featured React components library</Title>
-        <Text className={classes.description} size="xl" mt="xl">
-          Build fully functional accessible web applications faster than ever – Mantine includes
-          more than 120 customizable components and hooks to cover you in any situation
+    <div className={classes.wrapper}>
+      <Container size={700} className={classes.inner}>
+        <h1 className={classes.title}>
+          Create {' '}
+          <Text component="span" variant="gradient" gradient={{ from: 'darkgreen', to: 'green' }} inherit>
+            AI-curated
+          </Text>{' '}
+          Spotify playlists in seconds.
+        </h1>
+
+        <Text className={classes.description} color="dimmed">
+          Build fully functional accessible web applications with ease – Mantine includes more than
+          100 customizable components and hooks to cover you in any situation
         </Text>
 
-        <Button variant="gradient" size="xl" radius="xl" className={classes.control}>
-          Get started
-        </Button>
+        <Group className={classes.controls}>
+          <Button
+            component="a"
+            href="/api/auth/spotify"
+            size="xl"
+            className={classes.control}
+            variant="gradient"
+            gradient={{ from: 'darkgreen', to: 'green' }}
+            leftIcon={<IconBrandSpotify size={20} />}
+          >
+            Login with Spotify
+          </Button>
+
+          <Button
+            component="a"
+            href="/faq"
+            size="xl"
+            variant="default"
+            className={classes.control}
+          >
+            FAQ
+          </Button>
+        </Group>
       </Container>
     </div>
   );

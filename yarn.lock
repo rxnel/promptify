@@ -1820,6 +1820,13 @@
     "@mantine/utils" "6.0.2"
     react-dropzone "14.2.3"
 
+"@mantine/ds@^6.0.13":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@mantine/ds/-/ds-6.0.13.tgz#92807e8d0e9cb608094ae4a6e34d79c272afdc58"
+  integrity sha512-iY1UCPoGlVWRYCdRyQYyoSs3eCfGMH8byOGZLttBbSGfJG0cRw7OuB5QyQZ5LaNr3Mz7f87No9HS5i+x4LtBLg==
+  dependencies:
+    "@mantine/utils" "6.0.13"
+
 "@mantine/hooks@6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-6.0.2.tgz#88433aade23237c1566a083b80e6620eaa932561"
@@ -1872,6 +1879,11 @@
   dependencies:
     clsx "1.1.1"
     csstype "3.0.9"
+
+"@mantine/utils@6.0.13":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-6.0.13.tgz#a7adc128a2e7c07031c7221c1533800d0c80279a"
+  integrity sha512-iqIU9wurqAeccVbWjM0yr1JGne5VP+ob55M03QAXOEN4+ck93VDTjCkZJR2RFhDcs5q0twQFoOmU/gULR8aKIA==
 
 "@mantine/utils@6.0.2":
   version "6.0.2"
