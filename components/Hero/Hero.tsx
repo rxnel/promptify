@@ -1,7 +1,7 @@
 "use client";
 import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
 import { IconBrandSpotify } from '@tabler/icons';
-
+import { signIn } from 'next-auth/react';
 const useStyles = createStyles((theme) => ({
   wrapper: {
     display: 'flex',
@@ -70,6 +70,11 @@ const useStyles = createStyles((theme) => ({
 export function HeroTitle() {
   const { classes } = useStyles();
 
+  const loginSpotify = () => {
+    signIn('spotify', { callbackUrl: '/create' })
+  };
+  
+
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
@@ -88,7 +93,7 @@ export function HeroTitle() {
         <Group className={classes.controls}>
           <Button
             component="a"
-            href="/api/auth/spotify"
+            onClick={loginSpotify}
             size="xl"
             className={classes.control}
             variant="gradient"
