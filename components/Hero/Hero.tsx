@@ -67,7 +67,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function HeroTitle() {
+export function Hero() {
   const { classes } = useStyles();
 
   const loginSpotify = () => {
