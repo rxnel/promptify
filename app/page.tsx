@@ -6,9 +6,5 @@ import { HeroTitle } from '../components/Hero/Hero';
 export default async function Page() {
   const session = await getServerSession();
   if (session) return redirect('/create');
-  return (
-    <div>
-      <HeroTitle />
-    </div>
-  );
+  return <HeroTitle />;
 }

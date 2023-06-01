@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
 import { IconBrandSpotify } from '@tabler/icons';
 import { signIn } from 'next-auth/react';
@@ -71,23 +71,28 @@ export function HeroTitle() {
   const { classes } = useStyles();
 
   const loginSpotify = () => {
-    signIn('spotify', { callbackUrl: '/create' })
+    signIn('spotify', { callbackUrl: '/create' });
   };
-  
 
   return (
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
         <h1 className={classes.title}>
-          Create {' '}
-          <Text component="span" variant="gradient" gradient={{ from: 'lightgreen', to: 'darkgreen' }} inherit>
+          Create{' '}
+          <Text
+            component="span"
+            variant="gradient"
+            gradient={{ from: 'lightgreen', to: 'darkgreen' }}
+            inherit
+          >
             AI-curated
           </Text>{' '}
           Spotify playlists effortlessly.
         </h1>
 
         <Text className={classes.description} color="dimmed">
-          Simply enter a prompt and let the AI do the heavy lifting. Say good-bye to spending hours curating playlists.
+          Simply enter a prompt and let the AI do the heavy lifting. Say good-bye to spending hours
+          curating playlists.
         </Text>
 
         <Group className={classes.controls}>
@@ -98,18 +103,12 @@ export function HeroTitle() {
             className={classes.control}
             variant="gradient"
             gradient={{ from: 'darkgreen', to: 'green' }}
-            leftIcon={<IconBrandSpotify size={20} />}
+            leftIcon={<IconBrandSpotify size={35} />}
           >
             Login with Spotify
           </Button>
 
-          <Button
-            component="a"
-            href="/faq"
-            size="xl"
-            variant="default"
-            className={classes.control}
-          >
+          <Button component="a" href="/faq" size="xl" variant="default" className={classes.control}>
             FAQ
           </Button>
         </Group>
